@@ -28,15 +28,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="709" height="214"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJz-Cy-fvH">
-                                        <rect key="frame" x="664" y="15" width="30" height="30"/>
+                                        <rect key="frame" x="669" y="15" width="25" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="7h8-C1-255"/>
-                                            <constraint firstAttribute="width" constant="30" id="Luc-cF-QWi"/>
+                                            <constraint firstAttribute="height" constant="25" id="7h8-C1-255"/>
+                                            <constraint firstAttribute="width" constant="25" id="Luc-cF-QWi"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="bookmark.fill" catalog="system" symbolScale="default"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25"/>
                                             <color key="baseForegroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
                                     </button>

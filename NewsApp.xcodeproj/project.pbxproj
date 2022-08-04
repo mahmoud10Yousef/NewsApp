@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		48AB589E289C42490071443C /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB589D289C42490071443C /* NewsDetailsViewController.swift */; };
+		48AB58A0289C47C20071443C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB589F289C47C20071443C /* SearchViewController.swift */; };
+		48AB58A3289C495D0071443C /* SearchNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB58A1289C495D0071443C /* SearchNewsCell.swift */; };
+		48AB58A4289C495D0071443C /* SearchNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48AB58A2289C495D0071443C /* SearchNewsCell.xib */; };
 		48B4040C289B830F008E06C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4040B289B830F008E06C9 /* AppDelegate.swift */; };
 		48B4040E289B830F008E06C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4040D289B830F008E06C9 /* SceneDelegate.swift */; };
 		48B40410289B830F008E06C9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4040F289B830F008E06C9 /* NewsViewController.swift */; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		48AB589D289C42490071443C /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
+		48AB589F289C47C20071443C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		48AB58A1289C495D0071443C /* SearchNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsCell.swift; sourceTree = "<group>"; };
+		48AB58A2289C495D0071443C /* SearchNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchNewsCell.xib; sourceTree = "<group>"; };
 		48B40408289B830F008E06C9 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B4040B289B830F008E06C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48B4040D289B830F008E06C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +180,8 @@
 				48B40435289B8C74008E06C9 /* NewsBannerCell.xib */,
 				48B40438289B907C008E06C9 /* LatestNewsCell.swift */,
 				48B40439289B907C008E06C9 /* LatestNewsCell.xib */,
+				48AB58A1289C495D0071443C /* SearchNewsCell.swift */,
+				48AB58A2289C495D0071443C /* SearchNewsCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 			children = (
 				48B4040F289B830F008E06C9 /* NewsViewController.swift */,
 				48AB589D289C42490071443C /* NewsDetailsViewController.swift */,
+				48AB589F289C47C20071443C /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -271,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AB58A4289C495D0071443C /* SearchNewsCell.xib in Resources */,
 				48B4043B289B907C008E06C9 /* LatestNewsCell.xib in Resources */,
 				48B40418289B8310008E06C9 /* LaunchScreen.storyboard in Resources */,
 				48B40415289B8310008E06C9 /* Assets.xcassets in Resources */,
@@ -328,9 +338,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AB58A3289C495D0071443C /* SearchNewsCell.swift in Sources */,
 				48B40436289B8C74008E06C9 /* NewsBannerCell.swift in Sources */,
 				48B40410289B830F008E06C9 /* NewsViewController.swift in Sources */,
 				48B4040C289B830F008E06C9 /* AppDelegate.swift in Sources */,
+				48AB58A0289C47C20071443C /* SearchViewController.swift in Sources */,
 				48B4043A289B907C008E06C9 /* LatestNewsCell.swift in Sources */,
 				48AB589E289C42490071443C /* NewsDetailsViewController.swift in Sources */,
 				48B40432289B84DB008E06C9 /* NetworkManager.swift in Sources */,
