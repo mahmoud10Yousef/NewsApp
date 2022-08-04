@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48AB589E289C42490071443C /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB589D289C42490071443C /* NewsDetailsViewController.swift */; };
 		48B4040C289B830F008E06C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4040B289B830F008E06C9 /* AppDelegate.swift */; };
 		48B4040E289B830F008E06C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4040D289B830F008E06C9 /* SceneDelegate.swift */; };
 		48B40410289B830F008E06C9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4040F289B830F008E06C9 /* NewsViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48AB589D289C42490071443C /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		48B40408289B830F008E06C9 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B4040B289B830F008E06C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48B4040D289B830F008E06C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				48B4040F289B830F008E06C9 /* NewsViewController.swift */,
+				48AB589D289C42490071443C /* NewsDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				48B40410289B830F008E06C9 /* NewsViewController.swift in Sources */,
 				48B4040C289B830F008E06C9 /* AppDelegate.swift in Sources */,
 				48B4043A289B907C008E06C9 /* LatestNewsCell.swift in Sources */,
+				48AB589E289C42490071443C /* NewsDetailsViewController.swift in Sources */,
 				48B40432289B84DB008E06C9 /* NetworkManager.swift in Sources */,
 				48B4040E289B830F008E06C9 /* SceneDelegate.swift in Sources */,
 				48B4042F289B84AF008E06C9 /* UIHelper.swift in Sources */,

@@ -56,6 +56,108 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="114.50892857142857"/>
         </scene>
+        <!--News Details View Controller-->
+        <scene sceneID="BBT-gG-sBV">
+            <objects>
+                <viewController id="h6B-YV-PYI" customClass="NewsDetailsViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BhP-WL-evJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="adq-mm-L6L">
+                                <rect key="frame" x="0.0" y="44" width="414" height="269"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Dan Veru, Palisade Capital: How to position as bull market beckons - CNBC" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRR-BB-1kw">
+                                <rect key="frame" x="38" y="333" width="361" height="74"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eN0-9S-dia">
+                                <rect key="frame" x="15" y="333" width="8" height="74"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="4rH-QF-nnY"/>
+                                    <constraint firstAttribute="width" constant="8" id="55N-oM-6gK"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6F-5d-j01">
+                                <rect key="frame" x="15" y="432" width="384" height="159"/>
+                                <string key="text">"Pony.ai, a Chinese autonomous vehicle company valued at $8.5 billion as of late, has sued two former employees over alleged trade secret infringement. The lawsuit is arriving months after Frank (Zhenhao) Pan and Youhan Sun, two former technical leaders at Pon…"</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHE-UK-KF7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="269"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSo-PO-6Ny">
+                                        <rect key="frame" x="369" y="15" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="9Dz-uR-zpG"/>
+                                            <constraint firstAttribute="width" constant="30" id="gze-K3-9hF"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="bookmark.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
+                                            <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="bookmarkButtonTapped:" destination="KcG-fF-3RJ" eventType="touchUpInside" id="yUa-Vx-aOM"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFr-bh-KY6">
+                                        <rect key="frame" x="15" y="233" width="90.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jSo-PO-6Ny" secondAttribute="trailing" constant="15" id="78c-vC-4XK"/>
+                                    <constraint firstAttribute="bottom" secondItem="YFr-bh-KY6" secondAttribute="bottom" constant="15" id="DXb-rl-Srq"/>
+                                    <constraint firstItem="YFr-bh-KY6" firstAttribute="leading" secondItem="mHE-UK-KF7" secondAttribute="leading" constant="15" id="JJK-Zj-g5I"/>
+                                    <constraint firstItem="jSo-PO-6Ny" firstAttribute="top" secondItem="mHE-UK-KF7" secondAttribute="top" constant="15" id="ue8-lo-2Yh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="voh-pG-CU3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="adq-mm-L6L" firstAttribute="height" secondItem="BhP-WL-evJ" secondAttribute="height" multiplier="0.3" id="1rK-gR-jgm"/>
+                            <constraint firstItem="VRR-BB-1kw" firstAttribute="top" secondItem="adq-mm-L6L" secondAttribute="bottom" constant="20" id="2LA-bh-b6j"/>
+                            <constraint firstItem="W6F-5d-j01" firstAttribute="leading" secondItem="voh-pG-CU3" secondAttribute="leading" constant="15" id="90m-F3-fJK"/>
+                            <constraint firstItem="voh-pG-CU3" firstAttribute="trailing" secondItem="VRR-BB-1kw" secondAttribute="trailing" constant="15" id="AWw-iq-IOe"/>
+                            <constraint firstItem="voh-pG-CU3" firstAttribute="trailing" secondItem="W6F-5d-j01" secondAttribute="trailing" constant="15" id="Aa7-bv-w17"/>
+                            <constraint firstItem="eN0-9S-dia" firstAttribute="leading" secondItem="voh-pG-CU3" secondAttribute="leading" constant="15" id="Ijc-n2-YUv"/>
+                            <constraint firstItem="adq-mm-L6L" firstAttribute="leading" secondItem="voh-pG-CU3" secondAttribute="leading" id="NyA-pA-gMP"/>
+                            <constraint firstItem="VRR-BB-1kw" firstAttribute="leading" secondItem="eN0-9S-dia" secondAttribute="trailing" constant="15" id="OHB-g7-ehd"/>
+                            <constraint firstItem="VRR-BB-1kw" firstAttribute="top" secondItem="eN0-9S-dia" secondAttribute="top" id="SWu-Da-hmk"/>
+                            <constraint firstItem="mHE-UK-KF7" firstAttribute="top" secondItem="adq-mm-L6L" secondAttribute="top" id="UIi-QZ-s5r"/>
+                            <constraint firstItem="mHE-UK-KF7" firstAttribute="width" secondItem="adq-mm-L6L" secondAttribute="width" id="UX2-Yh-Oqh"/>
+                            <constraint firstItem="voh-pG-CU3" firstAttribute="trailing" secondItem="adq-mm-L6L" secondAttribute="trailing" id="bBo-RM-ecJ"/>
+                            <constraint firstItem="VRR-BB-1kw" firstAttribute="bottom" secondItem="eN0-9S-dia" secondAttribute="bottom" id="bRm-P7-BgH"/>
+                            <constraint firstItem="mHE-UK-KF7" firstAttribute="leading" secondItem="adq-mm-L6L" secondAttribute="leading" id="cD6-pt-YQg"/>
+                            <constraint firstItem="adq-mm-L6L" firstAttribute="top" secondItem="voh-pG-CU3" secondAttribute="top" id="cFj-1v-PNK"/>
+                            <constraint firstItem="VRR-BB-1kw" firstAttribute="leading" secondItem="eN0-9S-dia" secondAttribute="trailing" constant="15" id="hev-CG-4dk"/>
+                            <constraint firstAttribute="trailing" secondItem="VRR-BB-1kw" secondAttribute="trailing" constant="15" id="pvP-jJ-WbR"/>
+                            <constraint firstItem="mHE-UK-KF7" firstAttribute="height" secondItem="adq-mm-L6L" secondAttribute="height" id="tg3-FG-s8q"/>
+                            <constraint firstItem="W6F-5d-j01" firstAttribute="top" secondItem="VRR-BB-1kw" secondAttribute="bottom" constant="25" id="vAe-3r-ohQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newsDescriptionLabel" destination="W6F-5d-j01" id="maF-mA-KdA"/>
+                        <outlet property="newsImageView" destination="adq-mm-L6L" id="Gm5-LM-ZsO"/>
+                        <outlet property="newsPublishedTimeLabel" destination="YFr-bh-KY6" id="hJ5-wR-bDg"/>
+                        <outlet property="newsTitleLabel" destination="VRR-BB-1kw" id="Bog-lC-eyL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4G-Qn-Nvy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="KcG-fF-3RJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1746.376811594203" y="121.875"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="IqR-0Z-4KC">
             <objects>
@@ -77,8 +179,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bookmark.fill" catalog="system" width="112" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
