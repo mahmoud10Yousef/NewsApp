@@ -15,6 +15,16 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         configureCollectionViewCompositionalLayout()
         configureCollectionView()
+        NetworkManager.shared.fetchData(url: "https://newsapi.org/v2/top-headlines?country=eg&apiKey=db71d97193dd453db7fec98cd40a1290", decodable: News.self) { result in
+            switch result{
+                
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print("failure")
+                print(error.rawValue)
+            }
+        }
         
     }
     

@@ -12,7 +12,11 @@ class NetworkManager {
     
     static let shared = NetworkManager()
     
-    func fetchData<T:Decodable>(url:String?,decodable:T.Type,completion: @escaping (Result<T,ErrorMessage>)->Void) {
+    private init(){
+        
+    }
+    
+    func fetchData<T:Codable>(url:String?,decodable:T.Type,completion: @escaping (Result<T,ErrorMessage>)->Void) {
         
         guard let url = URL(string: url!) else {
             completion(.failure(.invalidURL))
@@ -29,11 +33,13 @@ class NetworkManager {
                     return
                 }
                 
+                print(data.count)
                 do{
                     let decoder = JSONDecoder()
-                    let resp = try decoder.decode(T.self, from: data)
                     
-                    completion(.success(resp))
+                    let response = try decoder.decode(T.self, from: data)
+                    
+                    completion(.success(response))
                 }catch{
                     completion(.failure(.invalidResponse))
                 }
