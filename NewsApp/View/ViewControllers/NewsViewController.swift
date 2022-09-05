@@ -8,7 +8,6 @@
 import UIKit
 import ProgressHUD
 import RxSwift
-import RxDataSources
 
 
 class NewsViewController: UIViewController {
@@ -30,29 +29,30 @@ class NewsViewController: UIViewController {
         getTopBannerNews()
         getLatestNews()
         subscribeToLatestNews()
-        latestNewsTableView.rowHeight = 120
+        latestNewsTableView.rowHeight = 130
         
     }
     
-    func subscribeToTopBannerNews() {
+    
+    private func subscribeToTopBannerNews() {
            self.newsViewModel.topNewsSubjects
                .bind(to: self.collectionView
-                   .rx
-                        .items(cellIdentifier: NewsBannerCell.reuseID,
-                          cellType: NewsBannerCell.self)) { row, article, cell in
-                   cell.newsTilteLabel.text = article.title
+               .rx
+               .items(cellIdentifier: NewsBannerCell.reuseID,cellType: NewsBannerCell.self)) { row, article, cell in
+               
+                   cell.configureCell(publishedTime: article.publishedAt, title: article.title, imageUrl: article.urlToImage ?? "")
            }
            .disposed(by: disposeBag)
        }
     
     
-    func subscribeToLatestNews() {
+   private func subscribeToLatestNews() {
            self.newsViewModel.latestNewsSubjects
                .bind(to: self.latestNewsTableView
-                   .rx
-                        .items(cellIdentifier: LatestNewCell.reuseID,
-                          cellType: LatestNewCell.self)) { row, article, cell in
-                   cell.newsTitleLabel.text = article.description
+               .rx
+               .items(cellIdentifier: LatestNewCell.reuseID, cellType: LatestNewCell.self)) { row, article, cell in
+                   print(article.name)
+                   cell.configureCell(name: article.name, description: article.description)
            }
            .disposed(by: disposeBag)
        }
@@ -62,16 +62,17 @@ class NewsViewController: UIViewController {
         newsViewModel.getTopBannerNews()
     }
     
+    
     private func getLatestNews(){
         newsViewModel.getLatestnews()
     }
+    
     
     private func subscripeToLoadingView(){
         newsViewModel.loadingBehavior.subscribe(onNext: { isLoading in
             isLoading ? ProgressHUD.show("Loading") : ProgressHUD.dismiss()
         }).disposed(by: disposeBag)
     }
-    
     
     
     private func configureCollectionViewCompositionalLayout(){

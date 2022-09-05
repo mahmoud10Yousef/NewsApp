@@ -20,6 +20,12 @@ class NewsBannerCell: UICollectionViewCell {
         super.awakeFromNib()
         contentView.layer.cornerRadius = 15
     }
-
+ 
+    
+    func configureCell(publishedTime: String , title : String , imageUrl : String){
+        newsImageView.setImage(with: imageUrl)
+        newsTilteLabel.text = title
+        newsPublishedTimeLabel.text = publishedTime.convertToDisplayFormat()
+    }
     
 }

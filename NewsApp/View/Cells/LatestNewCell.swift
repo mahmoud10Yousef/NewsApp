@@ -15,6 +15,7 @@ class LatestNewCell: UITableViewCell {
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsPublishedTimelabel: UILabel!
     
+    @IBOutlet weak var newsName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +26,11 @@ class LatestNewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell(name:String , description:String ){
+        newsName.text = name
+        newsTitleLabel.text = description
     }
     
 }
