@@ -6,91 +6,90 @@
 //
 
 import UIKit
+import ProgressHUD
+import RxSwift
+import RxDataSources
+
 
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+
+    @IBOutlet weak var latestNewsTableView: UITableView!
+    
+    private let newsViewModel = NewsViewModel()
+    let disposeBag = DisposeBag()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionViewCompositionalLayout()
-        configureCollectionView()
-        NetworkManager.shared.fetchData(url: "https://newsapi.org/v2/top-headlines?country=eg&apiKey=db71d97193dd453db7fec98cd40a1290", decodable: News.self) { result in
-            switch result{
-                
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print("failure")
-                print(error.rawValue)
-            }
-        }
+        registerCells()
+        subscripeToLoadingView()
+        subscribeToTopBannerNews()
+        getTopBannerNews()
+        getLatestNews()
+        subscribeToLatestNews()
+        latestNewsTableView.rowHeight = 120
         
     }
+    
+    func subscribeToTopBannerNews() {
+           self.newsViewModel.topNewsSubjects
+               .bind(to: self.collectionView
+                   .rx
+                        .items(cellIdentifier: NewsBannerCell.reuseID,
+                          cellType: NewsBannerCell.self)) { row, article, cell in
+                   cell.newsTilteLabel.text = article.title
+           }
+           .disposed(by: disposeBag)
+       }
+    
+    
+    func subscribeToLatestNews() {
+           self.newsViewModel.latestNewsSubjects
+               .bind(to: self.latestNewsTableView
+                   .rx
+                        .items(cellIdentifier: LatestNewCell.reuseID,
+                          cellType: LatestNewCell.self)) { row, article, cell in
+                   cell.newsTitleLabel.text = article.description
+           }
+           .disposed(by: disposeBag)
+       }
+    
+    
+    private func getTopBannerNews(){
+        newsViewModel.getTopBannerNews()
+    }
+    
+    private func getLatestNews(){
+        newsViewModel.getLatestnews()
+    }
+    
+    private func subscripeToLoadingView(){
+        newsViewModel.loadingBehavior.subscribe(onNext: { isLoading in
+            isLoading ? ProgressHUD.show("Loading") : ProgressHUD.dismiss()
+        }).disposed(by: disposeBag)
+    }
+    
     
     
     private func configureCollectionViewCompositionalLayout(){
         let layout = UICollectionViewCompositionalLayout {sectionIndex,enviroment in
-            switch sectionIndex {
-            case 0 :
                 return UIHelper.newsBannerSection()
-                
-            default:
-                return UIHelper.latestNewsSection()
-            }
         }
         collectionView.setCollectionViewLayout(layout, animated: true)
     }
     
     
-    private func configureCollectionView(){
-        collectionView.delegate   = self
-        collectionView.dataSource = self
-        
+    private func registerCells(){
         collectionView.register(UINib(nibName: NewsBannerCell.reuseID, bundle: nil), forCellWithReuseIdentifier: NewsBannerCell.reuseID)
-        collectionView.register(UINib(nibName: LatestNewsCell.reusueID, bundle: nil), forCellWithReuseIdentifier: LatestNewsCell.reusueID)
-        
+        latestNewsTableView.register(UINib(nibName: LatestNewCell.reuseID, bundle: nil), forCellReuseIdentifier: LatestNewCell.reuseID)
         
     }
     
 }
 
-
-extension NewsViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0 :
-            return 10
-        default:
-            return 20
-        }
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case 0 :
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsBannerCell.reuseID, for: indexPath) as? NewsBannerCell else {fatalError("Unable deque cell...")}
-            
-            return cell
-            
-        case 1 :
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LatestNewsCell.reusueID , for: indexPath) as? LatestNewsCell else {fatalError("Unable deque cell...")}
-            
-            return cell
-            
-        default:
-            return UICollectionViewCell()
-        }
-    }
-    
-    
-    
-}
 
 
 

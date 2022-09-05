@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LatestNewCell" rowHeight="225" id="KGk-i7-Jjw" customClass="LatestNewCell" customModule="NewsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="627" height="225"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="627" height="225"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcL-b8-PsZ">
+                        <rect key="frame" x="0.0" y="0.0" width="627" height="225"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" translatesAutoresizingMaskIntoConstraints="NO" id="oQI-Eo-xke">
+                                <rect key="frame" x="15" y="15" width="120" height="195"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="k2z-HI-2fq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsh-4k-pkr">
+                                <rect key="frame" x="150" y="62" width="462" height="61"/>
+                                <string key="text">Elon Musk fights Twitter over release of potentially confidential informationElon Musk fights Twitter over release of potentially confidential information</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTv-DL-TGy">
+                                <rect key="frame" x="150" y="189" width="90.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPj-Zi-Ykx">
+                                <rect key="frame" x="587" y="185" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="c7L-zM-afc"/>
+                                    <constraint firstAttribute="width" constant="25" id="n5g-XB-VBc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="bookmark.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25"/>
+                                    <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oQI-Eo-xke" firstAttribute="leading" secondItem="QcL-b8-PsZ" secondAttribute="leading" constant="15" id="4U0-oW-GcF"/>
+                            <constraint firstAttribute="trailing" secondItem="Hsh-4k-pkr" secondAttribute="trailing" constant="15" id="HW9-b0-LZG"/>
+                            <constraint firstAttribute="bottom" secondItem="oQI-Eo-xke" secondAttribute="bottom" constant="15" id="I7p-Eh-f6u"/>
+                            <constraint firstAttribute="trailing" secondItem="sPj-Zi-Ykx" secondAttribute="trailing" constant="15" id="IJn-7T-oBf"/>
+                            <constraint firstItem="Hsh-4k-pkr" firstAttribute="leading" secondItem="oQI-Eo-xke" secondAttribute="trailing" constant="15" id="Z9C-Mv-Hzc"/>
+                            <constraint firstItem="sPj-Zi-Ykx" firstAttribute="bottom" secondItem="oQI-Eo-xke" secondAttribute="bottom" id="idR-ns-NH9"/>
+                            <constraint firstItem="YTv-DL-TGy" firstAttribute="bottom" secondItem="oQI-Eo-xke" secondAttribute="bottom" id="lUC-Vy-j4x"/>
+                            <constraint firstItem="oQI-Eo-xke" firstAttribute="top" secondItem="QcL-b8-PsZ" secondAttribute="top" constant="15" id="nkT-5r-T7Y"/>
+                            <constraint firstItem="Hsh-4k-pkr" firstAttribute="centerY" secondItem="oQI-Eo-xke" secondAttribute="centerY" constant="-20" id="ukF-5b-il5"/>
+                            <constraint firstItem="YTv-DL-TGy" firstAttribute="leading" secondItem="oQI-Eo-xke" secondAttribute="trailing" constant="15" id="xkJ-At-nJN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QcL-b8-PsZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3gc-4Q-G8A"/>
+                    <constraint firstAttribute="trailing" secondItem="QcL-b8-PsZ" secondAttribute="trailing" id="Ebi-81-B4O"/>
+                    <constraint firstAttribute="bottom" secondItem="QcL-b8-PsZ" secondAttribute="bottom" id="N3j-xL-h1N"/>
+                    <constraint firstItem="QcL-b8-PsZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="m3u-SG-5mv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="newsImageView" destination="oQI-Eo-xke" id="DXd-KT-5Pp"/>
+                <outlet property="newsPublishedTimelabel" destination="YTv-DL-TGy" id="kDL-lj-1og"/>
+                <outlet property="newsTitleLabel" destination="Hsh-4k-pkr" id="4Gx-pX-PVq"/>
+            </connections>
+            <point key="canvasLocation" x="-105" y="91"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bookmark.fill" catalog="system" width="112" height="128"/>
+        <image name="news" width="321" height="157"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

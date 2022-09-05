@@ -11,6 +11,8 @@ target 'NewsApp' do
   pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa' 
-  
+  pod 'ProgressHUD'
+  pod 'RxDataSources', '~> 5.0'
+   
 
 end

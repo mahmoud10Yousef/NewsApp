@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a5O-8H-OuB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sKQ-px-FNK">
                                     <size key="itemSize" width="128" height="128"/>
@@ -57,24 +57,55 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGt-wr-GGd">
+                                <rect key="frame" x="16" y="373" width="382" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="WBn-pi-6ow"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4DY-ZX-ntc">
+                                <rect key="frame" x="0.0" y="405" width="414" height="408"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LatestNewCell" id="GmQ-d6-XgG" customClass="LatestNewCell" customModule="NewsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GmQ-d6-XgG" id="3fP-0e-6TC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a5O-8H-OuB" secondAttribute="bottom" id="CYe-VW-7Pr"/>
+                            <constraint firstItem="4DY-ZX-ntc" firstAttribute="top" secondItem="iGt-wr-GGd" secondAttribute="bottom" constant="8" id="6xo-te-xhP"/>
+                            <constraint firstItem="iGt-wr-GGd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7MW-9P-LL1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a5O-8H-OuB" secondAttribute="trailing" id="FHJ-Wd-VHc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iGt-wr-GGd" secondAttribute="trailing" constant="16" id="LcY-BL-iAR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4DY-ZX-ntc" secondAttribute="trailing" id="RZh-bP-KyO"/>
                             <constraint firstItem="a5O-8H-OuB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Twn-9H-vw5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4DY-ZX-ntc" secondAttribute="bottom" id="Uqt-PI-0Fm"/>
+                            <constraint firstItem="iGt-wr-GGd" firstAttribute="top" secondItem="a5O-8H-OuB" secondAttribute="bottom" constant="16" id="bqf-PX-4ez"/>
+                            <constraint firstItem="4DY-ZX-ntc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dtZ-FX-NEv"/>
+                            <constraint firstItem="a5O-8H-OuB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="jtH-zW-tsM"/>
                             <constraint firstItem="a5O-8H-OuB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nFc-aZ-r44"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="KkP-nk-6Hp"/>
                     <connections>
-                        <outlet property="collectionView" destination="a5O-8H-OuB" id="gpI-1e-Vky"/>
+                        <outlet property="collectionView" destination="a5O-8H-OuB" id="Sjr-yF-J15"/>
+                        <outlet property="latestNewsTableView" destination="4DY-ZX-ntc" id="xhz-bx-yba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-862" y="636"/>
+            <point key="canvasLocation" x="-862.31884057971024" y="635.49107142857144"/>
         </scene>
         <!--News Details View Controller-->
         <scene sceneID="BBT-gG-sBV">
