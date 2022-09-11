@@ -28,4 +28,11 @@ class SearchNewsCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    func configureCell(publishedTime: String , title : String , imageUrl : String){
+        newsImageView.setImage(with: imageUrl)
+        newsTitleLabel.text = title
+        newsPublishedTimelabel.text = publishedTime.convertToDisplayFormat()
+    }
+    
 }

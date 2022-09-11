@@ -6,48 +6,91 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import ProgressHUD
 
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var  searchController = UISearchController()
+    
+    private let searchViewModel = SearchViewModel()
+    let disposeBag = DisposeBag()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSearchController()
         configureTableView()
+        getSearchingNews()
+        subscripeToLoadingView()
+        subscribeToNewsSubjects()
+        bindToSearchValue()
     }
     
     
-   private func configureSearchController(){
-         let searchController                                  = UISearchController()
-       //  searchController.searchResultsUpdater                 = self
-         searchController.searchBar.placeholder                = "Search for news by title"
-         searchController.obscuresBackgroundDuringPresentation = false
-         navigationItem.searchController                       = searchController
-     }
+    private func configureSearchController(){
+       // searchController.searchBar.delegate  = self
+          searchController.searchBar.placeholder                = "Search for news by title"
+          searchController.obscuresBackgroundDuringPresentation = false
+          navigationItem.searchController                       = searchController
+      }
     
+    
+    func bindToSearchValue() {
+        searchController.searchBar.rx.text
+            .bind(to: searchViewModel.searchValueBehavior)
+            .disposed(by: disposeBag)
+    }
+    
+    
+    private func getSearchingNews(){
+        searchViewModel.getSearchingNews()
+    }
+    
+    
+   
+    
+//    private func bindSearchBarToViewModel(){
+//        let articleQuery = searchController.searchBar.rx.text.orEmpty.throttle(.microseconds(300), scheduler: MainScheduler.instance).distinctUntilChanged().map { [self] query  in
+//            self.searchViewModel.searchingNewsSubjects.filter { article in
+//                query.isEmpty || article.contains(where: { article in
+//                    article.title.lowercased().contains(query.lowercased())
+//                })
+//            }.bind(to: self.tableView
+//                    .rx
+//                    .items(cellIdentifier: SearchNewsCell.reuseID,cellType: SearchNewsCell.self)) { row, article, cell in
+//
+//                        cell.configureCell(publishedTime: article.publishedAt, title: article.title, imageUrl: article.urlToImage ?? "")
+//
+//                    }.disposed(by: disposeBag)
+//        }
+//
+//    }
+    
+    
+    private func subscripeToLoadingView(){
+        searchViewModel.loadingBehavior.subscribe(onNext: { isLoading in
+            isLoading ? ProgressHUD.show("Loading") : ProgressHUD.dismiss()
+        }).disposed(by: disposeBag)
+    }
+    
+    
+    private func subscribeToNewsSubjects() {
+           self.searchViewModel.newsSubjects
+               .bind(to: self.tableView
+               .rx
+               .items(cellIdentifier: SearchNewsCell.reuseID,cellType: SearchNewsCell.self)) { row, article, cell in
+
+                   cell.configureCell(publishedTime: article.publishedAt, title: article.title, imageUrl: article.urlToImage ?? "")
+               }.disposed(by: disposeBag)
+       }
     
     private func configureTableView(){
-        tableView.delegate   = self
-        tableView.dataSource = self
         tableView.rowHeight  = 150
         tableView.register(UINib(nibName: SearchNewsCell.reuseID, bundle: nil), forCellReuseIdentifier: SearchNewsCell.reuseID)
     }
-   
-  
-  
-
-}
-
-extension SearchViewController: UITableViewDelegate , UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchNewsCell.reuseID , for: indexPath) as? SearchNewsCell else {fatalError("Unable deque cell...")}
-        
-        return cell
-    }
-    
     
 }
+

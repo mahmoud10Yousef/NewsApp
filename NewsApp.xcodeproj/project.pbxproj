@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4822D06628CD60D900ADA6B5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4822D06528CD60D900ADA6B5 /* SearchViewModel.swift */; };
+		483149C428CD77470066BFF2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483149C328CD77470066BFF2 /* SearchViewModel.swift */; };
 		48AB589E289C42490071443C /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB589D289C42490071443C /* NewsDetailsViewController.swift */; };
 		48AB58A0289C47C20071443C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB589F289C47C20071443C /* SearchViewController.swift */; };
 		48AB58A3289C495D0071443C /* SearchNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB58A1289C495D0071443C /* SearchNewsCell.swift */; };
@@ -40,7 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4822D06528CD60D900ADA6B5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		483149C328CD77470066BFF2 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = ../../../../.Trash/SearchViewModel.swift; sourceTree = "<group>"; };
 		48AB589D289C42490071443C /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		48AB589F289C47C20071443C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		48AB58A1289C495D0071443C /* SearchNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsCell.swift; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 		48B40424289B8424008E06C9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				483149C328CD77470066BFF2 /* SearchViewModel.swift */,
 				48ED258E28C56B18003143D3 /* NewsViewModel.swift */,
-				4822D06528CD60D900ADA6B5 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -378,7 +378,7 @@
 				48B4040C289B830F008E06C9 /* AppDelegate.swift in Sources */,
 				48D0030428C69107000F8980 /* LatestNewCell.swift in Sources */,
 				48D0030728C6A070000F8980 /* LatestNews.swift in Sources */,
-				4822D06628CD60D900ADA6B5 /* SearchViewModel.swift in Sources */,
+				483149C428CD77470066BFF2 /* SearchViewModel.swift in Sources */,
 				48ED258D28C55758003143D3 /* News.swift in Sources */,
 				48AB58A0289C47C20071443C /* SearchViewController.swift in Sources */,
 				48ED258F28C56B18003143D3 /* NewsViewModel.swift in Sources */,
