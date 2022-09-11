@@ -13,7 +13,6 @@ import RxSwift
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-
     @IBOutlet weak var latestNewsTableView: UITableView!
     
     private let newsViewModel = NewsViewModel()

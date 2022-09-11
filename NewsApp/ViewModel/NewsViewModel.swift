@@ -14,6 +14,8 @@ class NewsViewModel{
     var loadingBehavior    = BehaviorRelay<Bool>(value: false)
     var topNewsSubjects    = PublishSubject<[Article]>()
     var latestNewsSubjects = PublishSubject<[Source]>()
+   
+    
     func getTopBannerNews(){
         
         loadingBehavior.accept(true)
