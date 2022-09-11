@@ -27,6 +27,7 @@ class SearchViewController: UIViewController {
         subscripeToLoadingView()
         subscribeToNewsSubjects()
         bindToSearchValue()
+        subscripeToSearchNewsSelection()
     }
     
     
@@ -50,26 +51,6 @@ class SearchViewController: UIViewController {
     }
     
     
-   
-    
-//    private func bindSearchBarToViewModel(){
-//        let articleQuery = searchController.searchBar.rx.text.orEmpty.throttle(.microseconds(300), scheduler: MainScheduler.instance).distinctUntilChanged().map { [self] query  in
-//            self.searchViewModel.searchingNewsSubjects.filter { article in
-//                query.isEmpty || article.contains(where: { article in
-//                    article.title.lowercased().contains(query.lowercased())
-//                })
-//            }.bind(to: self.tableView
-//                    .rx
-//                    .items(cellIdentifier: SearchNewsCell.reuseID,cellType: SearchNewsCell.self)) { row, article, cell in
-//
-//                        cell.configureCell(publishedTime: article.publishedAt, title: article.title, imageUrl: article.urlToImage ?? "")
-//
-//                    }.disposed(by: disposeBag)
-//        }
-//
-//    }
-    
-    
     private func subscripeToLoadingView(){
         searchViewModel.loadingBehavior.subscribe(onNext: { isLoading in
             isLoading ? ProgressHUD.show("Loading") : ProgressHUD.dismiss()
@@ -86,6 +67,26 @@ class SearchViewController: UIViewController {
                    cell.configureCell(publishedTime: article.publishedAt, title: article.title, imageUrl: article.urlToImage ?? "")
                }.disposed(by: disposeBag)
        }
+    
+    
+    private func subscripeToSearchNewsSelection(){
+        self.tableView.rx.modelSelected(Article.self).bind{ [weak self] article in
+            guard let self = self else { return }
+            self.navigationToDetails(title: article.title, imageUrl: article.urlToImage ?? "" , description: article.articleDescription ?? "", date: article.publishedAt)
+        }.disposed(by: disposeBag)
+    }
+    
+    
+    
+    private func navigationToDetails(title:String , imageUrl : String? , description:String? , date:String){
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewsDetailsViewController") as! NewsDetailsViewController
+        vc.newsTitle       = title
+        vc.newsImageUrl    = imageUrl ?? ""
+        vc.newsDescription = description ?? ""
+        vc.newsDate        = date
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     private func configureTableView(){
         tableView.rowHeight  = 150

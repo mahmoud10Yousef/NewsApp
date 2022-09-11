@@ -31,7 +31,7 @@ class NewsViewModel{
             case .success(let topNews):
                 self?.topNewsSubjects.onNext(topNews.articles)
             case .failure(let error):
-                self?.topNewsSubjects.onError(error.rawValue as! Error)
+                print(error.localizedDescription)
             }
         }
     }
@@ -50,7 +50,7 @@ class NewsViewModel{
             case .success(let latestNews):
                 self?.latestNewsSubjects.onNext(latestNews.sources)
             case .failure(let error):
-                self?.latestNewsSubjects.onError(error.rawValue as! Error)
+                print(error.localizedDescription)
             }
         }
     }
