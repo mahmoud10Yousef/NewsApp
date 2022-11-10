@@ -27,7 +27,7 @@
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7q-KT-7Lj">
                                 <rect key="frame" x="0.0" y="0.0" width="709" height="214"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJz-Cy-fvH">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJz-Cy-fvH">
                                         <rect key="frame" x="669" y="15" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="7h8-C1-255"/>
@@ -98,7 +98,7 @@
     </objects>
     <resources>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
-        <image name="news" width="321" height="157"/>
+        <image name="news" width="374" height="135"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

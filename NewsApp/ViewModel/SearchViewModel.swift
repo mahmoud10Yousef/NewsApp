@@ -1,7 +1,15 @@
+//
+//  SearchViewModel.swift
+//  NewsApp
+//
+//  Created by mahmoud yousef on 09/11/2022.
+//
+
+import Foundation
+
 import Foundation
 import RxSwift
 import RxRelay
-
 
 class SearchViewModel {
     
